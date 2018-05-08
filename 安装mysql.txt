@@ -1,0 +1,15 @@
+今天在电脑上安装mysql server8.0.1，因为是绿色版免安装，需要手动设置配置文件。
+几个关键点：
+  A:设置环境变量
+  B:设置my.ini。这里面需要注意配置内容
+                                    [mysqld]
+                                  basedir = E:\mysql
+                                  datadir = E:\mysql\data
+                                  port = 3306
+ C:输入mysqld --initialize #创建data文件夹
+ D：输入安装命令: mysqld –install 
+ E：输入启动服务命令:  net start MySQL
+ F:输入mysql -u root -p 回车输入密码，连接数据库。这里注意密码在data目录下.err文件中，一串特殊字符
+ G：修改密码需要使用ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密码'; 
+ 
+ 
