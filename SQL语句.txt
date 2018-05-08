@@ -1,0 +1,45 @@
+#返回可用数据库的列表
+SHOW DATABASES;
+
+#选择一个数据库，读取其中的数据，假定有个数据库customer
+USE customer;
+
+#返回一个数据库内表的列表
+SHOW TABLES;
+
+#返回一个列表内的字段（属性）（列）
+SHOW COLUMNS FROM customer;   或者 DESCRIBE customer;
+
+#使用完全限定的表名
+SELECT products.prod_name
+FROM crashcouse.products
+
+#检索数据
+SELECT DISTINCT列1，列2      									#DISTINCT去除重复的行
+FROM 表
+WHERE 列2 操作符 字符串或者数字 AND（OR） 列3操作符 字符串或者数字    #过滤数据
+ORDER BY 列3 DESC 			 									#使用列3排序，降序
+LIMIT 3,4；					 									#从行3开始检索4行
+
+IN操作符用于WHERE语句中 例如：
+WHERE prod_name IN(1002,1003)
+表达意思与下面一样，而且更快更直观
+WHERE prod_name = 1002 OR prod_name = 1003
+
+NOT操作符用于WHERE语句中，否定后跟的条件，例如：
+WHERE prod_name NOT IN(1002,1003)
+相当于IN 取反
+
+LIKE用通配符过滤数据
+%表示任何字符出现任意次数
+_表示任何单个字符
+使用通配符注意：最好少用；最好不要放开头；位置放对
+
+#正则表达式
+REGEXP 'XXX'
+LIKE匹配整个列，如果被匹配的文字出现在列值，LIKE不会找到它并返回（除非使用通配符）
+而REGEXP则会找到被匹配的列值并返回
+.表示匹配一个任意字符
+OR匹配使用|
+匹配几个字符可以使用字集[],例如[123]意思是匹配1或者2或者3
+字集可以被否定,[^123]可以匹配1,2,3之外的任何东西
