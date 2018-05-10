@@ -147,3 +147,5 @@ ON 表1.列1 = 表2.列2 		#用INNER JOIN   ON 联接
 外部联接：联接包含了那些在相关表中没有关联行的行
 LEFT(RIGHT) OUTER JOIN 			#使用OUTER时必须包含LEFT或者RIGHT来选择包含哪边表的所有行
 ON		
+
+联结 UNION
