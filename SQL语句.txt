@@ -148,3 +148,4 @@ ON 表1.列1 = 表2.列2 		#用INNER JOIN   ON 联接
 LEFT(RIGHT) OUTER JOIN 			#使用OUTER时必须包含LEFT或者RIGHT来选择包含哪边表的所有行
 ON		
 
+看完mysql必知必会有一周了，但是沉迷小说一周全忘了。有个大概吧，只会用到的时候再学，接下来学习数据结构
